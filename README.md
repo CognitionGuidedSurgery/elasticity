@@ -26,69 +26,245 @@ for checking the input files for elasticity.
 ## Input Files
 
 Two input files, one with constraints (hf3) one with constraints.
-
 Each input files is in XML. 
+
+
+
 ### Hiflow
+
 
 * `Param`
     * `OutputPathAndPrefix`
        prefix of the output paths (folder has to be exists)
     * <Mesh>
-        * `Filename` **required**
+        * `Filename` path
+        
           path to the mesh file
-        * `BCdataFilename` **rerquired**
+
+        * `BCdataFilename` path
+        
           path to the contraint file
-        * `InitialRefLevel`
-        * 
+          
+        * `InitialRefLevel` unsigned integer
+        
+          ** no doc **
         
     * `LinearAlgebra`
-        * `Platform` *values: ..*
-        * `Implementation` *values: ..*
-        * `MatrixFormat`
-          Possible Values: DENSE, CSR, COO, ELL
+        * `Platform` enumeration
+        
+           *values: ..*
+           
+        * `Implementation` enumeration
+          
+           *values: ..*
+           
+        * `MatrixFormat` enumeration 
+          
+          * *DENSE
+            
+            **no doc**
+          
+          * CS 
+           
+            **no doc**
+          
+          * COO 
+          
+            **no doc**
+          
+          * ELL
+            
+            **no doc**
+          
     * `ElasticityModel`
-        * `density`
-        * `lambda`
-        * `mu`
-        * `gravity`
+        * `density` float
+        
+          density value of the material in kg / mm³
+          
+        * `lambda` float
+        
+          **no doc**
+          
+        * `mu` float
+        
+          **no doc**
+          
+        * `gravity` float
+        
+          Gravity is applied reverse to the z axis. 
+          A given gravity is transformed into the vector: `gravity * [0, 0, -1]`.
+          
+          **no doc**
     * `QuadratureOrder`
+       
+       **no doc**
+       
     * `FiniteElements`
         * `DisplacementDegree`
+        
+           **no doc**
+           
     * `Instationary`
-        * `SolveInstationary`
-        * `DampingFactor`
-        * `RayleighAlpha`
-        * `RayleighBeta`
-        * `Method` *values: ImplicitEuler, CrankNicolson, ExplicitEuler, Newmark*
-        * `DeltaT`
-        * `MaxTimeStepIts`
+        * `SolveInstationary` boolean
+        
+           **no doc**
+           
+        * `DampingFactor`float
+        
+          **no doc**
+          
+        * `RayleighAlpha`float
+        
+          **no doc**
+        
+        * `RayleighBeta`float
+        
+          **no doc**
+        
+        * `Method` enumeration
+        
+          **no doc**
+          
+          * ImplicitEuler
+          * CrankNicolson 
+          * ExplicitEuler
+          * Newmark
+        
+        * `DeltaT` unsigned integer
+        
+          **no doc**
+        
+        * `MaxTimeStepIts` unsigned integer
+        
+        
+          **no doc**
+        
     * `Boundary`
         * `DirichletMaterial`
+        
+          **no doc**
+        
         * `DirichletMaterial`
-        * `DirichletMaterial`
+        
+          **no doc**
+        
         * `NeumannMaterial1`
+        
+          **no doc**
+        
         * `NeumannMaterial1Pressure`
+        
+          **no doc**
+        
         * `NeumannMaterial2`
+        
+          **no doc**
+        
         * `NeumannMaterial2Pressure`
+        
+          **no doc**
+        
     * `LinearSolver`
-        * `SolverName` *values: CG (+ SGAUSS_SEIDEL etc) or GMRES (+ ILU2)*
+        * `SolverName` enumeration 
+           
+           determines the linear solver to use. Specfiy one these:
+        
+          * *CG*
+            
+            SGAUSS_SEIDEL
+            
+          * *GMRES*
+          
+            +ILU2 
+          
+          
         * `MaximumIterations`
+        
+          **no doc**
+        
         * `AbsoluteTolerance`
+        
+          **no doc**
+        
         * `RelativeTolerance`
+        
+          **no doc**
+        
         * `DivergenceLimit`
-        * `BasisSize`
-        * `Preconditioning`
-        * `PreconditionerName` *values: SGAUSS_SEIDEL, NOPRECOND = 0, JACOBI = 1, GAUSS_SEIDEL = 2, SGAUSS_SEIDEL = 3, SOR, SSOR, ILU, ILU2, ILU_P, ILUpp*
+        
+          **no doc**
+        
+        * `BasisSize` 
+        
+          **no doc**
+        
+        * `Preconditioning` boolean
+        
+          **no doc**
+        
+        * `PreconditionerName` enumeration 
+        
+          specifies the preconditioner.
+          
+          One of these values can be given:
+
+          **no doc**          
+          
+          * SGAUSS_SEIDEL
+          * NOPRECOND
+          * JACOBI
+          * GAUSS_SEIDEL
+          * SGAUSS_SEIDEL
+          * SOR
+          * SSOR
+          * ILU
+          * ILU2
+          * ILU_P
+          * ILUpp
+    
         * `Omega`
+        
+          **no doc**
+        
         * `ILU_p`
+        
+          **no doc**
+        
     * `ILUPP`
         * `PreprocessingType`
+        
+          **no doc**
+        
         * `PreconditionerNumber`
+        
+          **no doc**
+        
         * `MaxMultilevels`
+        
+          **no doc**
+        
         * `MemFactor`
+        
+          **no doc**
+        
         * `PivotThreshold`
+        
+          **no doc**
+        
         * `MinPivot`
+        
+          **no doc**
+        
     * `Backup`
         * `Restore`
+        
+          **no doc**
+        
         * `LastTimeStep`
+        
+          **no doc**
+        
         * `Filename`
+        
+          **no doc**
+        
