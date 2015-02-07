@@ -25,8 +25,8 @@ for checking the input files for elasticity.
 
 ## Input Files
 
-Two input files, one with constraints (hf3) one with constraints.
-Each input files is in XML. 
+Two input files, one with the simulation setup (hf3), giving information such as input files, material properties, mathematical simulation framework, etc., and the other one with constraints (bcdata.xml), giving information such as pointwise displacement (Dirichlet) and force/pressure (Neumann) boundary conditions.
+Each input file is in XML format. 
 
 [Hf3 file specification](https://github.com/CognitionGuidedSurgery/elasticity/wiki/Hiflow%C2%B3-Elasticity-Input-File)
 [BC file specification](https://github.com/CognitionGuidedSurgery/elasticity/wiki/BC-file)
